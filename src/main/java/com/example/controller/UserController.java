@@ -17,8 +17,12 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/getUser")
-    @ResponseBody
     public List<User> getUser(){
-        return userService.quertUser();
+        return userService.queryUser();
+    }
+
+    @RequestMapping("getOneUser")
+    public User getOneUser(){
+        return userService.queryUserById(1);
     }
 }
